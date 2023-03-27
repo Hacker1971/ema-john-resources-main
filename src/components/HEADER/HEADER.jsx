@@ -4,7 +4,7 @@ import React from 'react';
 const HEADER = () => {
     return (
         <>
-            <div className="navbar bg-slate-900 text-white">
+            <div className="navbar bg-slate-900 text-white z-50 sticky top-0 ">
   <div className="flex-1">
     <a className="btn btn-ghost normal-case text-xl"><p>Ema-John</p> </a>
   </div>
