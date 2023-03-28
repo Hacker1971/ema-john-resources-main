@@ -4,9 +4,12 @@ const CARD = ({card}) => {
     console.log(card);
     let total = 0;
     let totalshipping = 0;
+    let quantity = 0;
     for (const product of card){
-        total = total + (product.price);
-        totalshipping = totalshipping + (product.shipping)
+        total = total + (product.price) * product.quantity;
+        totalshipping = totalshipping + (product.shipping);
+        quantity = quantity + product.quantity;
+
     }
     let tex = Math.ceil(total *7/100) ;
     let GrandTotal = total + totalshipping + tex;
@@ -15,7 +18,7 @@ const CARD = ({card}) => {
     return (
         <div className='my-6 bg-[#FF9900] p-6 h-full fixed'>
             <h4 className='text-center text-3xl font-semibold'>Order Summary</h4>
-                <p>Selected Items : {card.length} </p>
+                <p>Selected Items : {quantity} </p>
                 <p>Total Price: ${total}</p>
                 <p>Total Shipping Charge: ${totalshipping}</p>
                 <p>Tax: ${tex}</p>
